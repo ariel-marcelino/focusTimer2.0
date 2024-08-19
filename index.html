@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Focus timer 2.0</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <script type="module" src="./src/main.js" defer></script>
+
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div class="timerControls">
+        <section id="timer" class="flex">
+          <span id="minutes">00</span>
+          <span>:</span>
+          <span id="seconds">00</span>
+        </section>
+
+        <section id="controls" class="flex">
+          <button data-action="toggleRunning" class="ph ph-bold ph-play-circle">
+            <span class="sr-only"> iniciar contador</span>
+          </button>
+
+          <button data-action="toggleRunning" class="ph ph-pause-circle">
+            <span class="sr-only">pausar contador</span>
+          </button>
+
+          <button data-action="stop" class="ph ph-bold ph-stop-circle">
+            <span class="sr-only"> reiniciar contador</span>
+          </button>
+
+          <button data-action="plusFive" class="ph ph-plus-circle">
+            <span class="sr-only">adicionar 5 minutos</span>
+          </button>
+
+          <button data-action="minusFive" class="ph ph-minus-circle">
+            <span class="sr-only"> remover 5 minutos</span>
+          </button>
+        </section>
+      </div>
+      <section id="sounds" class="flex">
+        <button data-action="toggleMusicTree" class="ph ph-tree-evergreen">
+          <span class="sr-only"> Ligar som de floresta </span>
+        </button>
+
+        <button data-action="toggleMusicCloud" class="ph ph-cloud-rain">
+          <span class="sr-only"> Ligar som de chuva </span>
+        </button>
+
+        <button data-action="toggleMusicStore" class="ph ph-storefront">
+          <span class="sr-only"> Ligar som da cafeteria </span>
+        </button>
+
+        <button data-action="toggleMusicFire" class="ph ph-fire">
+          <span class="sr-only"> Ligar som da lareira </span>
+        </button>
+      </section>
+    </div>
+  </body>
+</html>

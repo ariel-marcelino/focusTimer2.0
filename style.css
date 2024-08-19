@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  --bg-button-sounds: #e1e1e6;
+  --tx-color: #323238;
+  --bg-color: #ffffff;
+  --bg-button-sounds-on: #02799d;
+  --tx-color-music-on: #ffffff;
+}
+
+.sr-only {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  overflow: hidden;
+
+  margin: -1px;
+  padding: 0px;
+  border: 0;
+  appearance: none;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--tx-color);
+  display: grid;
+  height: 100vh;
+  place-content: center;
+}
+
+#app {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  gap: 1.92rem;
+}
+
+.flex {
+  display: flex;
+}
+
+#timer {
+  font-size: 9.6rem;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+#controls {
+  margin-top: 1.6rem;
+  padding: 2.2rem 4rem;
+  gap: 4rem;
+  border-radius: 999rem;
+}
+
+.timerControls {
+  display: grid;
+  justify-items: center;
+}
+
+#controls button {
+  background: transparent;
+  border: 0;
+
+  cursor: pointer;
+
+  font-size: 4.8rem;
+}
+
+#sounds {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+  width: 12rem;
+}
+
+#sounds button {
+  font-size: 4.5rem;
+  background-color: var(--bg-button-sounds);
+  border-radius: 2.4rem;
+  padding: 4.8rem;
+  transition: background-color 0.3s;
+}
+
+html.music-Tree #sounds .ph-tree-evergreen,
+html.music-Cloud #sounds .ph-cloud-rain,
+html.music-Store #sounds .ph-storefront,
+html.music-Fire #sounds .ph-fire {
+  background-color: var(--bg-button-sounds-on);
+  color: var(--tx-color-music-on);
+}
+
+html:not(.music-Tree) #sounds .ph-tree-evergreen,
+html:not(.music-Cloud) #sounds .ph-cloud-rain,
+html:not(.music-Store) #sounds .ph-storefront,
+html:not(.music-Fire) #sounds .ph-fire {
+  background-color: var(--bg-button-sounds);
+  color: var(--tx-color);
+}
+
+/* controls */
+.running .ph-play-circle,
+html:not(.running) .ph-pause-circle {
+  display: none;
+}
