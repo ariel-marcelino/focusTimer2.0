@@ -3,6 +3,8 @@ import * as ele from "./elements.js";
 import { stop } from "./action.js";
 
 export function countDown() {
+  clearTimeout(state.countdownId);
+
   if (!state.isRunning) {
     return;
   }
@@ -24,7 +26,7 @@ export function countDown() {
 
   updateDisplay(minutes, seconds);
 
-  setTimeout(() => countDown(), 1000);
+  state.countdownId = setTimeout(() => countDown(), 1000);
 }
 export function updateDisplay(minutes, seconds) {
   minutes = minutes ?? state.minutes;
